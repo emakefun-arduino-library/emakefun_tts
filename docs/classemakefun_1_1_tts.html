@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Emakefun TTS: emakefun::Tts类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Emakefun TTS<span id="projectnumber">&#160;2.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>emakefun</b></li><li class="navelem"><a class="el" href="classemakefun_1_1_tts.html">Tts</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-attribs">静态 Public 属性</a> &#124;
+<a href="classemakefun_1_1_tts-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">emakefun::Tts类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>语音合成模块  
+ <a href="classemakefun_1_1_tts.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="tts_8h_source.html">tts.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:af187ae08387c4b999754b28eb2e4f8ef"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8ef">TextEncodingType</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8efadaf0ec4d73cd041619e559481da97200">kGb23212</a> = 0x00
+, <a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8efa418259cdc919b0e02c847747789cf26e">kGbk</a> = 0x01
+, <a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8efaa87e571adc970fd569864695f5016dc6">kBig5</a> = 0x02
+, <a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8efa05fd81337b3fa608bdf94b7dfde7b8e9">kUtf16le</a> = 0x03
+, <br />
+&#160;&#160;<a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8efaf4ba97157efa0c86d2345755725f4517">kUtf8</a> = 0x04
+<br />
+ }</td></tr>
+<tr class="memdesc:af187ae08387c4b999754b28eb2e4f8ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">文本编码类型  <a href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8ef">更多...</a><br /></td></tr>
+<tr class="separator:af187ae08387c4b999754b28eb2e4f8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a5632b58165c5129c34493d9bafe0fb71"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemakefun_1_1_tts.html#a5632b58165c5129c34493d9bafe0fb71">Tts</a> (const uint8_t device_i2c_address=<a class="el" href="classemakefun_1_1_tts.html#aee97f2ac6b7446a259b23b4c7f139f6d">kDeviceI2cAddress</a>)</td></tr>
+<tr class="memdesc:a5632b58165c5129c34493d9bafe0fb71"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a5632b58165c5129c34493d9bafe0fb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27164850ed6aad632fc1436beab1c9ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemakefun_1_1_tts.html#a27164850ed6aad632fc1436beab1c9ce">Initialize</a> (TwoWire *const wire=&amp;Wire)</td></tr>
+<tr class="memdesc:a27164850ed6aad632fc1436beab1c9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化函数  <br /></td></tr>
+<tr class="separator:a27164850ed6aad632fc1436beab1c9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb93df866038f9084f44ce5a230f281e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemakefun_1_1_tts.html#acb93df866038f9084f44ce5a230f281e">Play</a> (const String &amp;text, const <a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8ef">TextEncodingType</a> text_encoding_type=<a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8efaf4ba97157efa0c86d2345755725f4517">kUtf8</a>)</td></tr>
+<tr class="memdesc:acb93df866038f9084f44ce5a230f281e"><td class="mdescLeft">&#160;</td><td class="mdescRight">文本转语音并播放  <br /></td></tr>
+<tr class="separator:acb93df866038f9084f44ce5a230f281e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97c2575ecf1f63f1e17971a277da784f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemakefun_1_1_tts.html#a97c2575ecf1f63f1e17971a277da784f">PlayFromCache</a> (const <a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8ef">TextEncodingType</a> text_encoding_type=<a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8efaf4ba97157efa0c86d2345755725f4517">kUtf8</a>, uint8_t count=<a class="el" href="classemakefun_1_1_tts.html#aa4b5286527ccb28439b9f8cff56fd83a">kMinSpeechCount</a>)</td></tr>
+<tr class="memdesc:a97c2575ecf1f63f1e17971a277da784f"><td class="mdescLeft">&#160;</td><td class="mdescRight">从缓存块0的文本开始转语音并播放  <br /></td></tr>
+<tr class="separator:a97c2575ecf1f63f1e17971a277da784f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2580efb8d6e770ae3e77125c5328d083"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemakefun_1_1_tts.html#a2580efb8d6e770ae3e77125c5328d083">PushTextToCache</a> (const String &amp;text, const uint8_t cache_index)</td></tr>
+<tr class="memdesc:a2580efb8d6e770ae3e77125c5328d083"><td class="mdescLeft">&#160;</td><td class="mdescRight">将文本内容上传到指定缓存块  <br /></td></tr>
+<tr class="separator:a2580efb8d6e770ae3e77125c5328d083"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c0b9b9cd70ac0d227898f3b082b96c2"><td class="memItemLeft" align="right" valign="top"><a id="a3c0b9b9cd70ac0d227898f3b082b96c2" name="a3c0b9b9cd70ac0d227898f3b082b96c2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Stop</b> ()</td></tr>
+<tr class="memdesc:a3c0b9b9cd70ac0d227898f3b082b96c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止播放 <br /></td></tr>
+<tr class="separator:a3c0b9b9cd70ac0d227898f3b082b96c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae68030925d2622ed80106406f9085ee6"><td class="memItemLeft" align="right" valign="top"><a id="ae68030925d2622ed80106406f9085ee6" name="ae68030925d2622ed80106406f9085ee6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr>
+<tr class="memdesc:ae68030925d2622ed80106406f9085ee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">暂停播放 <br /></td></tr>
+<tr class="separator:ae68030925d2622ed80106406f9085ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a447522198c0bdeba25dc2b588151814d"><td class="memItemLeft" align="right" valign="top"><a id="a447522198c0bdeba25dc2b588151814d" name="a447522198c0bdeba25dc2b588151814d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Resume</b> ()</td></tr>
+<tr class="memdesc:a447522198c0bdeba25dc2b588151814d"><td class="mdescLeft">&#160;</td><td class="mdescRight">恢复播放 <br /></td></tr>
+<tr class="separator:a447522198c0bdeba25dc2b588151814d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+静态 Public 属性</h2></td></tr>
+<tr class="memitem:aee97f2ac6b7446a259b23b4c7f139f6d"><td class="memItemLeft" align="right" valign="top"><a id="aee97f2ac6b7446a259b23b4c7f139f6d" name="aee97f2ac6b7446a259b23b4c7f139f6d"></a>
+static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>kDeviceI2cAddress</b> = 0x40</td></tr>
+<tr class="memdesc:aee97f2ac6b7446a259b23b4c7f139f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">语音合成模块默认I2C地址 <br /></td></tr>
+<tr class="separator:aee97f2ac6b7446a259b23b4c7f139f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13b1446cb5551be09eec2ce023f8cee7"><td class="memItemLeft" align="right" valign="top"><a id="a13b1446cb5551be09eec2ce023f8cee7" name="a13b1446cb5551be09eec2ce023f8cee7"></a>
+static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>kMaxTextBytesSize</b> = 250</td></tr>
+<tr class="memdesc:a13b1446cb5551be09eec2ce023f8cee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">文本数据最大字节数 <br /></td></tr>
+<tr class="separator:a13b1446cb5551be09eec2ce023f8cee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51434dee82b13ac5bef7e519d5b3bb0c"><td class="memItemLeft" align="right" valign="top"><a id="a51434dee82b13ac5bef7e519d5b3bb0c" name="a51434dee82b13ac5bef7e519d5b3bb0c"></a>
+static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>kMaxCacheIndex</b> = 15</td></tr>
+<tr class="memdesc:a51434dee82b13ac5bef7e519d5b3bb0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">缓存块索引最大值 <br /></td></tr>
+<tr class="separator:a51434dee82b13ac5bef7e519d5b3bb0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4b5286527ccb28439b9f8cff56fd83a"><td class="memItemLeft" align="right" valign="top"><a id="aa4b5286527ccb28439b9f8cff56fd83a" name="aa4b5286527ccb28439b9f8cff56fd83a"></a>
+static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>kMinSpeechCount</b> = 1</td></tr>
+<tr class="memdesc:aa4b5286527ccb28439b9f8cff56fd83a"><td class="mdescLeft">&#160;</td><td class="mdescRight">从缓存合成播放次数的最小值 <br /></td></tr>
+<tr class="separator:aa4b5286527ccb28439b9f8cff56fd83a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa966a3e080732e26e5783bfb6dfb303"><td class="memItemLeft" align="right" valign="top"><a id="aaa966a3e080732e26e5783bfb6dfb303" name="aaa966a3e080732e26e5783bfb6dfb303"></a>
+static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>kMaxSpeechCount</b> = 15</td></tr>
+<tr class="memdesc:aaa966a3e080732e26e5783bfb6dfb303"><td class="mdescLeft">&#160;</td><td class="mdescRight">从缓存合成播放次数的最大值 <br /></td></tr>
+<tr class="separator:aaa966a3e080732e26e5783bfb6dfb303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>语音合成模块 </p>
+<dl class="section examples"><dt>示例</dt><dd><a class="el" href="play_8ino-example.html#_a0">play.ino</a>, <a class="el" href="play_flow_control_8ino-example.html#_a0">play_flow_control.ino</a>, <a class="el" href="play_from_cache_8ino-example.html#_a0">play_from_cache.ino</a> , 以及 <a class="el" href="play_with_parameters_8ino-example.html#_a0">play_with_parameters.ino</a>.</dd>
+</dl>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="af187ae08387c4b999754b28eb2e4f8ef" name="af187ae08387c4b999754b28eb2e4f8ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af187ae08387c4b999754b28eb2e4f8ef">&#9670;&#160;</a></span>TextEncodingType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8ef">emakefun::Tts::TextEncodingType</a> : uint8_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>文本编码类型 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="af187ae08387c4b999754b28eb2e4f8efadaf0ec4d73cd041619e559481da97200" name="af187ae08387c4b999754b28eb2e4f8efadaf0ec4d73cd041619e559481da97200"></a>kGb23212&#160;</td><td class="fielddoc"><p>GB2312 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af187ae08387c4b999754b28eb2e4f8efa418259cdc919b0e02c847747789cf26e" name="af187ae08387c4b999754b28eb2e4f8efa418259cdc919b0e02c847747789cf26e"></a>kGbk&#160;</td><td class="fielddoc"><p>GBK </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af187ae08387c4b999754b28eb2e4f8efaa87e571adc970fd569864695f5016dc6" name="af187ae08387c4b999754b28eb2e4f8efaa87e571adc970fd569864695f5016dc6"></a>kBig5&#160;</td><td class="fielddoc"><p>BIG5 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af187ae08387c4b999754b28eb2e4f8efa05fd81337b3fa608bdf94b7dfde7b8e9" name="af187ae08387c4b999754b28eb2e4f8efa05fd81337b3fa608bdf94b7dfde7b8e9"></a>kUtf16le&#160;</td><td class="fielddoc"><p>UTF16LE </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af187ae08387c4b999754b28eb2e4f8efaf4ba97157efa0c86d2345755725f4517" name="af187ae08387c4b999754b28eb2e4f8efaf4ba97157efa0c86d2345755725f4517"></a>kUtf8&#160;</td><td class="fielddoc"><p>UTF8 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a5632b58165c5129c34493d9bafe0fb71" name="a5632b58165c5129c34493d9bafe0fb71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5632b58165c5129c34493d9bafe0fb71">&#9670;&#160;</a></span>Tts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">emakefun::Tts::Tts </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>device_i2c_address</em> = <code><a class="el" href="classemakefun_1_1_tts.html#aee97f2ac6b7446a259b23b4c7f139f6d">kDeviceI2cAddress</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device_i2c_address</td><td>语音合成模块I2C地址，默认为0x40 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a27164850ed6aad632fc1436beab1c9ce" name="a27164850ed6aad632fc1436beab1c9ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27164850ed6aad632fc1436beab1c9ce">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool emakefun::Tts::Initialize </td>
+          <td>(</td>
+          <td class="paramtype">TwoWire *const&#160;</td>
+          <td class="paramname"><em>wire</em> = <code>&amp;Wire</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>初始化函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">wire</td><td>Wire对象，用于I2C通讯，可选，默认使用Arduino标准的Wire对象进行I2C通讯 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>初始化结果 </dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>成功 </td></tr>
+    <tr><td class="paramname">false</td><td>失败，如I2C无法与语音识别模块通讯 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section examples"><dt>示例</dt><dd><a class="el" href="play_8ino-example.html#a2">play.ino</a>, <a class="el" href="play_flow_control_8ino-example.html#a2">play_flow_control.ino</a>, <a class="el" href="play_from_cache_8ino-example.html#a2">play_from_cache.ino</a> , 以及 <a class="el" href="play_with_parameters_8ino-example.html#a2">play_with_parameters.ino</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="acb93df866038f9084f44ce5a230f281e" name="acb93df866038f9084f44ce5a230f281e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb93df866038f9084f44ce5a230f281e">&#9670;&#160;</a></span>Play()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void emakefun::Tts::Play </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8ef">TextEncodingType</a>&#160;</td>
+          <td class="paramname"><em>text_encoding_type</em> = <code><a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8efaf4ba97157efa0c86d2345755725f4517">kUtf8</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>文本转语音并播放 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>文本数据，数据长度不大于250个字节 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">text_encoding_type</td><td>文本编码类型，参考 <a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8ef">TextEncodingType</a>, 默认为 <a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8efaf4ba97157efa0c86d2345755725f4517">kUtf8</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section examples"><dt>示例</dt><dd><a class="el" href="play_8ino-example.html#a3">play.ino</a> , 以及 <a class="el" href="play_with_parameters_8ino-example.html#a3">play_with_parameters.ino</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a97c2575ecf1f63f1e17971a277da784f" name="a97c2575ecf1f63f1e17971a277da784f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97c2575ecf1f63f1e17971a277da784f">&#9670;&#160;</a></span>PlayFromCache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void emakefun::Tts::PlayFromCache </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8ef">TextEncodingType</a>&#160;</td>
+          <td class="paramname"><em>text_encoding_type</em> = <code><a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8efaf4ba97157efa0c86d2345755725f4517">kUtf8</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>count</em> = <code><a class="el" href="classemakefun_1_1_tts.html#aa4b5286527ccb28439b9f8cff56fd83a">kMinSpeechCount</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从缓存块0的文本开始转语音并播放 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text_encoding_type</td><td>文本编码类型，参考 TextEncodingType，默认为 <a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8efaf4ba97157efa0c86d2345755725f4517">kUtf8</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">synthesizing_count</td><td>合成播放次数，范围 1 ~ 15 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2580efb8d6e770ae3e77125c5328d083" name="a2580efb8d6e770ae3e77125c5328d083"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2580efb8d6e770ae3e77125c5328d083">&#9670;&#160;</a></span>PushTextToCache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void emakefun::Tts::PushTextToCache </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>cache_index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将文本内容上传到指定缓存块 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>文本数据，数据长度不大于250个字节 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cache_index</td><td>缓存块索引，范围 0 ~ 15 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section examples"><dt>示例</dt><dd><a class="el" href="play_from_cache_8ino-example.html#a3">play_from_cache.ino</a>.</dd>
+</dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/<a class="el" href="tts_8h_source.html">tts.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

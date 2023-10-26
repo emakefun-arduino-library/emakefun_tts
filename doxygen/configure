@@ -1,0 +1,12 @@
+@INCLUDE_PATH  = doxygen
+@INCLUDE = base.cfg
+PROJECT_NAME     = "Emakefun TTS"
+PROJECT_NUMBER   = 2.1
+ENABLED_SECTIONS = Chinese
+OUTPUT_LANGUAGE  = Chinese
+INPUT            = src/tts.h \
+                   examples/play/play.ino \
+                   examples/play_from_cache/play_from_cache.ino \
+                   examples/play_flow_contorl/play_flow_control.ino \
+                   examples/play_with_parameters/play_with_parameters.ino \
+
