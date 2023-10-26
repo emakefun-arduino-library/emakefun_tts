@@ -15,7 +15,7 @@ void setup() {
 }
 
 void loop() {
-  g_tts.Speech(F("一二三四五六七八九十"));
+  g_tts.Play(F("一二三四五六七八九十"));
   delay(1000);
 
   // 暂停合成播放

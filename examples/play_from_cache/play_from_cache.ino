@@ -23,7 +23,7 @@ void loop() {
   g_tts.PushTextToCache(F("六七八九十"), 1);
 
   // 开始从缓存区域合成播放文本，合成播放1次
-  g_tts.SpeechFromCache();
+  g_tts.PlayFromCache();
 
   delay(3000);
 }
