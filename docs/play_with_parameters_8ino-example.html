@@ -81,7 +81,7 @@ $(function() {
 <div class="line"><span class="preprocessor">#include &quot;tts.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// 创建tts实例</span></div>
-<div class="line"><a id="_a0" name="_a0"></a><a class="code hl_class" href="classemakefun_1_1_tts.html">emakefun::Tts</a> g_tts(<a id="a1" name="a1"></a><a class="code hl_variable" href="classemakefun_1_1_tts.html#aee97f2ac6b7446a259b23b4c7f139f6d">emakefun::Tts::kDeviceI2cAddress</a>);</div>
+<div class="line"><a id="_a0" name="_a0"></a><a class="code hl_class" href="classemakefun_1_1_tts.html">emakefun::Tts</a> g_tts(<a id="a1" name="a1"></a><a class="code hl_variable" href="classemakefun_1_1_tts.html#aec55cb265f5fe274311815423f33b604">emakefun::Tts::kDefaultI2cAddress</a>);</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> setup() {</div>
 <div class="line">  Serial.begin(115200);</div>
@@ -107,7 +107,7 @@ $(function() {
 <div class="ttc" id="aclassemakefun_1_1_tts_html"><div class="ttname"><a href="classemakefun_1_1_tts.html">emakefun::Tts</a></div><div class="ttdoc">语音合成模块</div><div class="ttdef"><b>Definition</b> tts.h:14</div></div>
 <div class="ttc" id="aclassemakefun_1_1_tts_html_a27164850ed6aad632fc1436beab1c9ce"><div class="ttname"><a href="classemakefun_1_1_tts.html#a27164850ed6aad632fc1436beab1c9ce">emakefun::Tts::Initialize</a></div><div class="ttdeci">bool Initialize(TwoWire *const wire=&amp;Wire)</div><div class="ttdoc">初始化函数</div></div>
 <div class="ttc" id="aclassemakefun_1_1_tts_html_acb93df866038f9084f44ce5a230f281e"><div class="ttname"><a href="classemakefun_1_1_tts.html#acb93df866038f9084f44ce5a230f281e">emakefun::Tts::Play</a></div><div class="ttdeci">void Play(const String &amp;text, const TextEncodingType text_encoding_type=kUtf8)</div><div class="ttdoc">文本转语音并播放</div></div>
-<div class="ttc" id="aclassemakefun_1_1_tts_html_aee97f2ac6b7446a259b23b4c7f139f6d"><div class="ttname"><a href="classemakefun_1_1_tts.html#aee97f2ac6b7446a259b23b4c7f139f6d">emakefun::Tts::kDeviceI2cAddress</a></div><div class="ttdeci">static constexpr uint8_t kDeviceI2cAddress</div><div class="ttdoc">语音合成模块默认I2C地址</div><div class="ttdef"><b>Definition</b> tts.h:19</div></div>
+<div class="ttc" id="aclassemakefun_1_1_tts_html_aec55cb265f5fe274311815423f33b604"><div class="ttname"><a href="classemakefun_1_1_tts.html#aec55cb265f5fe274311815423f33b604">emakefun::Tts::kDefaultI2cAddress</a></div><div class="ttdeci">static constexpr uint8_t kDefaultI2cAddress</div><div class="ttdoc">语音合成模块默认I2C地址</div><div class="ttdef"><b>Definition</b> tts.h:19</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

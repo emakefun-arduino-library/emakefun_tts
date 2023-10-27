@@ -7,7 +7,7 @@
 #include "tts.h"
 
 // 创建tts实例
-emakefun::Tts g_tts(emakefun::Tts::kDeviceI2cAddress);
+emakefun::Tts g_tts(emakefun::Tts::kDefaultI2cAddress);
 
 void setup() {
   Serial.begin(115200);

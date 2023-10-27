@@ -16,7 +16,7 @@ class Tts {
   /**
    * @brief 语音合成模块默认I2C地址
    */
-  static constexpr uint8_t kDeviceI2cAddress = 0x40;
+  static constexpr uint8_t kDefaultI2cAddress = 0x40;
 
   /**
    * @brief 文本数据最大字节数
@@ -54,7 +54,7 @@ class Tts {
    * @brief 构造函数
    * @param device_i2c_address 语音合成模块I2C地址，默认为0x40
    */
-  explicit Tts(const uint8_t device_i2c_address = kDeviceI2cAddress);
+  explicit Tts(const uint8_t device_i2c_address = kDefaultI2cAddress);
 
   /**
    * @brief 初始化函数
