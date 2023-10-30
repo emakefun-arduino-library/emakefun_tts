@@ -7,6 +7,6 @@ OUTPUT_LANGUAGE  = Chinese
 INPUT            = src/tts.h \
                    examples/play/play.ino \
                    examples/play_from_cache/play_from_cache.ino \
-                   examples/play_flow_contorl/play_flow_control.ino \
+                   examples/play_flow_control/play_flow_control.ino \
                    examples/play_with_parameters/play_with_parameters.ino \
 
