@@ -59,8 +59,8 @@ class Tts {
    * @brief 初始化函数
    * @param[in] wire Wire对象，用于I2C通讯，可选，默认使用Arduino标准的Wire对象进行I2C通讯
    * @return 初始化结果
-   * @retval true 成功
-   * @retval false 失败，如I2C无法与语音识别模块通讯
+   * @retval 0 成功
+   * @retval 非0值 失败
    */
   int32_t Initialize(TwoWire* const wire = &Wire);
 
