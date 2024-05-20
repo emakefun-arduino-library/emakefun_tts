@@ -1,9 +1,8 @@
 #pragma once
 
 #include <WString.h>
-#include <inttypes.h>
-
-#include "i2c_device.h"
+#include <Wire.h>
+#include <stdint.h>
 
 namespace emakefun {
 
@@ -52,9 +51,9 @@ class Tts {
 
   /**
    * @brief 构造函数
-   * @param device_i2c_address 语音合成模块I2C地址，默认为0x40
+   * @param di2c_address 语音合成模块I2C地址，默认为0x40
    */
-  explicit Tts(const uint8_t device_i2c_address = kDefaultI2cAddress);
+  explicit Tts(const uint8_t i2c_address = kDefaultI2cAddress);
 
   /**
    * @brief 初始化函数
@@ -63,7 +62,7 @@ class Tts {
    * @retval true 成功
    * @retval false 失败，如I2C无法与语音识别模块通讯
    */
-  bool Initialize(TwoWire* const wire = &Wire);
+  int32_t Initialize(TwoWire* const wire = &Wire);
 
   /**
    * @brief 文本转语音并播放
@@ -105,6 +104,9 @@ class Tts {
   Tts(const Tts&) = delete;
   Tts& operator=(const Tts&) = delete;
 
-  I2cDevice i2c_device_;
+  void I2cWrite(const uint8_t* data, const uint8_t length);
+
+  const uint8_t i2c_address_ = 0;
+  TwoWire* wire_ = nullptr;
 };
 }  // namespace emakefun

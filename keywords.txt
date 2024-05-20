@@ -1,9 +1,23 @@
 # Syntax Coloring Map For ExampleLibrary
 
 # Datatypes (KEYWORD1)
+Tts	KEYWORD1
+TextEncodingType	KEYWORD1
 
 # Methods and Functions (KEYWORD2)
+Initialize	KEYWORD2
+Play	KEYWORD2
+PlayFromCache	KEYWORD2
+PushTextToCache	KEYWORD2
+Stop	KEYWORD2
+Pause	KEYWORD2
+Resume	KEYWORD2
 
-# Instances (KEYWORD3)
+# Instances (KEYWORD2)
 
 # Constants (LITERAL1)
+kGb23212	LITERAL1
+kGbk	LITERAL1
+kBig5	LITERAL1
+kUtf16le	LITERAL1
+kUtf8	LITERAL1

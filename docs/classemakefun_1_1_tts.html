@@ -103,12 +103,12 @@ Public 类型</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a63c7267ff21bcd58122f7248616d7a83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemakefun_1_1_tts.html#a63c7267ff21bcd58122f7248616d7a83">Tts</a> (const uint8_t device_i2c_address=<a class="el" href="classemakefun_1_1_tts.html#aec55cb265f5fe274311815423f33b604">kDefaultI2cAddress</a>)</td></tr>
-<tr class="memdesc:a63c7267ff21bcd58122f7248616d7a83"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
-<tr class="separator:a63c7267ff21bcd58122f7248616d7a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27164850ed6aad632fc1436beab1c9ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemakefun_1_1_tts.html#a27164850ed6aad632fc1436beab1c9ce">Initialize</a> (TwoWire *const wire=&amp;Wire)</td></tr>
-<tr class="memdesc:a27164850ed6aad632fc1436beab1c9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化函数  <br /></td></tr>
-<tr class="separator:a27164850ed6aad632fc1436beab1c9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61b987e8622be1db651b6b201e3b2e90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemakefun_1_1_tts.html#a61b987e8622be1db651b6b201e3b2e90">Tts</a> (const uint8_t i2c_address=<a class="el" href="classemakefun_1_1_tts.html#aec55cb265f5fe274311815423f33b604">kDefaultI2cAddress</a>)</td></tr>
+<tr class="memdesc:a61b987e8622be1db651b6b201e3b2e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a61b987e8622be1db651b6b201e3b2e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada9b6f45bbca81b2d1be86f1e59b3bcb"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemakefun_1_1_tts.html#ada9b6f45bbca81b2d1be86f1e59b3bcb">Initialize</a> (TwoWire *const wire=&amp;Wire)</td></tr>
+<tr class="memdesc:ada9b6f45bbca81b2d1be86f1e59b3bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化函数  <br /></td></tr>
+<tr class="separator:ada9b6f45bbca81b2d1be86f1e59b3bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb93df866038f9084f44ce5a230f281e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemakefun_1_1_tts.html#acb93df866038f9084f44ce5a230f281e">Play</a> (const String &amp;text, const <a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8ef">TextEncodingType</a> text_encoding_type=<a class="el" href="classemakefun_1_1_tts.html#af187ae08387c4b999754b28eb2e4f8efaf4ba97157efa0c86d2345755725f4517">kUtf8</a>)</td></tr>
 <tr class="memdesc:acb93df866038f9084f44ce5a230f281e"><td class="mdescLeft">&#160;</td><td class="mdescRight">文本转语音并播放  <br /></td></tr>
 <tr class="separator:acb93df866038f9084f44ce5a230f281e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,8 +188,8 @@ static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>k
 </div>
 </div>
 <h2 class="groupheader">构造及析构函数说明</h2>
-<a id="a63c7267ff21bcd58122f7248616d7a83" name="a63c7267ff21bcd58122f7248616d7a83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63c7267ff21bcd58122f7248616d7a83">&#9670;&#160;</a></span>Tts()</h2>
+<a id="a61b987e8622be1db651b6b201e3b2e90" name="a61b987e8622be1db651b6b201e3b2e90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61b987e8622be1db651b6b201e3b2e90">&#9670;&#160;</a></span>Tts()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,7 +201,7 @@ static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>k
           <td class="memname">emakefun::Tts::Tts </td>
           <td>(</td>
           <td class="paramtype">const uint8_t&#160;</td>
-          <td class="paramname"><em>device_i2c_address</em> = <code><a class="el" href="classemakefun_1_1_tts.html#aec55cb265f5fe274311815423f33b604">kDefaultI2cAddress</a></code></td><td>)</td>
+          <td class="paramname"><em>i2c_address</em> = <code><a class="el" href="classemakefun_1_1_tts.html#aec55cb265f5fe274311815423f33b604">kDefaultI2cAddress</a></code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -215,7 +215,7 @@ static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>k
 <p>构造函数 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">device_i2c_address</td><td>语音合成模块I2C地址，默认为0x40 </td></tr>
+    <tr><td class="paramname">di2c_address</td><td>语音合成模块I2C地址，默认为0x40 </td></tr>
   </table>
   </dd>
 </dl>
@@ -223,14 +223,14 @@ static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>k
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
-<a id="a27164850ed6aad632fc1436beab1c9ce" name="a27164850ed6aad632fc1436beab1c9ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27164850ed6aad632fc1436beab1c9ce">&#9670;&#160;</a></span>Initialize()</h2>
+<a id="ada9b6f45bbca81b2d1be86f1e59b3bcb" name="ada9b6f45bbca81b2d1be86f1e59b3bcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada9b6f45bbca81b2d1be86f1e59b3bcb">&#9670;&#160;</a></span>Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool emakefun::Tts::Initialize </td>
+          <td class="memname">int32_t emakefun::Tts::Initialize </td>
           <td>(</td>
           <td class="paramtype">TwoWire *const&#160;</td>
           <td class="paramname"><em>wire</em> = <code>&amp;Wire</code></td><td>)</td>
@@ -253,8 +253,6 @@ static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>k
     <tr><td class="paramname">false</td><td>失败，如I2C无法与语音识别模块通讯 </td></tr>
   </table>
   </dd>
-</dl>
-<dl class="section examples"><dt>示例</dt><dd><a class="el" href="play_8ino-example.html#a2">play.ino</a>, <a class="el" href="play_flow_control_8ino-example.html#a2">play_flow_control.ino</a>, <a class="el" href="play_from_cache_8ino-example.html#a2">play_from_cache.ino</a> , 以及 <a class="el" href="play_with_parameters_8ino-example.html#a2">play_with_parameters.ino</a>.</dd>
 </dl>
 
 </div>
@@ -293,8 +291,6 @@ static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>k
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>示例</dt><dd><a class="el" href="play_8ino-example.html#a3">play.ino</a>, <a class="el" href="play_flow_control_8ino-example.html#a3">play_flow_control.ino</a> , 以及 <a class="el" href="play_with_parameters_8ino-example.html#a3">play_with_parameters.ino</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -332,8 +328,6 @@ static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>k
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>示例</dt><dd><a class="el" href="play_from_cache_8ino-example.html#a4">play_from_cache.ino</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -370,8 +364,6 @@ static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>k
     <tr><td class="paramdir">[in]</td><td class="paramname">cache_index</td><td>缓存块索引，范围 0 ~ 15 </td></tr>
   </table>
   </dd>
-</dl>
-<dl class="section examples"><dt>示例</dt><dd><a class="el" href="play_from_cache_8ino-example.html#a3">play_from_cache.ino</a>.</dd>
 </dl>
 
 </div>

@@ -7,12 +7,23 @@
 #include "tts.h"
 
 // 创建tts实例
+namespace {
 emakefun::Tts g_tts(emakefun::Tts::kDefaultI2cAddress);
+}
 
 void setup() {
   Serial.begin(115200);
-  g_tts.Initialize();
-  Serial.println("setup done");
+  Serial.println(F("setup"));
+  Wire.begin();
+  const auto ret = g_tts.Initialize(&Wire);
+  if (0 == ret) {
+    Serial.println(F("tts module initialization was successful"));
+  } else {
+    Serial.println(String(F("tts module initialization failed: ")) + ret);
+    while (true)
+      ;
+  }
+  Serial.println(F("setup was successful"));
 }
 
 void loop() {

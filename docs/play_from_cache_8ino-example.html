@@ -81,31 +81,39 @@ $(function() {
 <div class="line"><span class="preprocessor">#include &quot;tts.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// 创建tts实例</span></div>
+<div class="line"><span class="keyword">namespace </span>{</div>
 <div class="line"><a id="_a0" name="_a0"></a><a class="code hl_class" href="classemakefun_1_1_tts.html">emakefun::Tts</a> g_tts(<a id="a1" name="a1"></a><a class="code hl_variable" href="classemakefun_1_1_tts.html#aec55cb265f5fe274311815423f33b604">emakefun::Tts::kDefaultI2cAddress</a>);</div>
+<div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> setup() {</div>
 <div class="line">  Serial.begin(115200);</div>
-<div class="line">  g_tts.<a id="a2" name="a2"></a><a class="code hl_function" href="classemakefun_1_1_tts.html#a27164850ed6aad632fc1436beab1c9ce">Initialize</a>();</div>
-<div class="line">  Serial.println(<span class="stringliteral">&quot;setup done&quot;</span>);</div>
+<div class="line">  Serial.println(F(<span class="stringliteral">&quot;setup&quot;</span>));</div>
+<div class="line">  Wire.begin();</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> ret = g_tts.Initialize(&amp;Wire);</div>
+<div class="line">  <span class="keywordflow">if</span> (0 == ret) {</div>
+<div class="line">    Serial.println(F(<span class="stringliteral">&quot;tts module initialization was successful&quot;</span>));</div>
+<div class="line">  } <span class="keywordflow">else</span> {</div>
+<div class="line">    Serial.println(String(F(<span class="stringliteral">&quot;tts module initialization failed: &quot;</span>)) + ret);</div>
+<div class="line">    <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line">      ;</div>
+<div class="line">  }</div>
+<div class="line">  Serial.println(F(<span class="stringliteral">&quot;setup was successful&quot;</span>));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
 <div class="line">  <span class="comment">// 将文本1内容上传到缓存块0</span></div>
-<div class="line">  g_tts.<a id="a3" name="a3"></a><a class="code hl_function" href="classemakefun_1_1_tts.html#a2580efb8d6e770ae3e77125c5328d083">PushTextToCache</a>(F(<span class="stringliteral">&quot;一二三四五&quot;</span>), 0);</div>
+<div class="line">  g_tts.PushTextToCache(F(<span class="stringliteral">&quot;一二三四五&quot;</span>), 0);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// 将文本2内容上传到缓存块1</span></div>
-<div class="line">  g_tts.<a class="code hl_function" href="classemakefun_1_1_tts.html#a2580efb8d6e770ae3e77125c5328d083">PushTextToCache</a>(F(<span class="stringliteral">&quot;六七八九十&quot;</span>), 1);</div>
+<div class="line">  g_tts.PushTextToCache(F(<span class="stringliteral">&quot;六七八九十&quot;</span>), 1);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// 开始从缓存区域合成播放文本，合成播放1次</span></div>
-<div class="line">  g_tts.<a id="a4" name="a4"></a><a class="code hl_function" href="classemakefun_1_1_tts.html#a97c2575ecf1f63f1e17971a277da784f">PlayFromCache</a>();</div>
+<div class="line">  g_tts.PlayFromCache();</div>
 <div class="line"> </div>
 <div class="line">  delay(3000);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassemakefun_1_1_tts_html"><div class="ttname"><a href="classemakefun_1_1_tts.html">emakefun::Tts</a></div><div class="ttdoc">语音合成模块</div><div class="ttdef"><b>Definition</b> tts.h:14</div></div>
-<div class="ttc" id="aclassemakefun_1_1_tts_html_a2580efb8d6e770ae3e77125c5328d083"><div class="ttname"><a href="classemakefun_1_1_tts.html#a2580efb8d6e770ae3e77125c5328d083">emakefun::Tts::PushTextToCache</a></div><div class="ttdeci">void PushTextToCache(const String &amp;text, const uint8_t cache_index)</div><div class="ttdoc">将文本内容上传到指定缓存块</div></div>
-<div class="ttc" id="aclassemakefun_1_1_tts_html_a27164850ed6aad632fc1436beab1c9ce"><div class="ttname"><a href="classemakefun_1_1_tts.html#a27164850ed6aad632fc1436beab1c9ce">emakefun::Tts::Initialize</a></div><div class="ttdeci">bool Initialize(TwoWire *const wire=&amp;Wire)</div><div class="ttdoc">初始化函数</div></div>
-<div class="ttc" id="aclassemakefun_1_1_tts_html_a97c2575ecf1f63f1e17971a277da784f"><div class="ttname"><a href="classemakefun_1_1_tts.html#a97c2575ecf1f63f1e17971a277da784f">emakefun::Tts::PlayFromCache</a></div><div class="ttdeci">void PlayFromCache(const TextEncodingType text_encoding_type=kUtf8, uint8_t count=kMinSpeechCount)</div><div class="ttdoc">从缓存块0的文本开始转语音并播放</div></div>
-<div class="ttc" id="aclassemakefun_1_1_tts_html_aec55cb265f5fe274311815423f33b604"><div class="ttname"><a href="classemakefun_1_1_tts.html#aec55cb265f5fe274311815423f33b604">emakefun::Tts::kDefaultI2cAddress</a></div><div class="ttdeci">static constexpr uint8_t kDefaultI2cAddress</div><div class="ttdoc">语音合成模块默认I2C地址</div><div class="ttdef"><b>Definition</b> tts.h:19</div></div>
+<div class="ttc" id="aclassemakefun_1_1_tts_html"><div class="ttname"><a href="classemakefun_1_1_tts.html">emakefun::Tts</a></div><div class="ttdoc">语音合成模块</div><div class="ttdef"><b>Definition</b> tts.h:13</div></div>
+<div class="ttc" id="aclassemakefun_1_1_tts_html_aec55cb265f5fe274311815423f33b604"><div class="ttname"><a href="classemakefun_1_1_tts.html#aec55cb265f5fe274311815423f33b604">emakefun::Tts::kDefaultI2cAddress</a></div><div class="ttdeci">static constexpr uint8_t kDefaultI2cAddress</div><div class="ttdoc">语音合成模块默认I2C地址</div><div class="ttdef"><b>Definition</b> tts.h:18</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
