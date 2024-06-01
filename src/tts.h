@@ -1,4 +1,5 @@
-#pragma once
+#ifndef EMAKEFUN_TTS_H_
+#define EMAKEFUN_TTS_H_
 
 #include <WString.h>
 #include <Wire.h>
@@ -38,6 +39,21 @@ class Tts {
   static constexpr uint8_t kMaxSpeechCount = 15;
 
   /**
+   * @enum ErrorCode
+   * @brief 错误码
+   */
+  enum ErrorCode : uint32_t {
+    kOK = 0,                                  /**< 0：成功 */
+    kI2cDataTooLongToFitInTransmitBuffer = 1, /**< 1：I2C数据太长，无法装入传输缓冲区 */
+    kI2cReceivedNackOnTransmitOfAddress = 2,  /**< 2：在I2C发送地址时收到NACK */
+    kI2cReceivedNackOnTransmitOfData = 3,     /**< 3：在I2C发送数据时收到NACK */
+    kI2cOtherError = 4,                       /**< 4：其他I2C错误 */
+    kI2cTimeout = 5,                          /**< 5：I2C通讯超时 */
+    kInvalidParameter = 6,                    /**< 6：参数错误 */
+    kUnknownError = 7,                        /**< 7: 未知错误*/
+  };
+
+  /**
    * @enum TextEncodingType
    * @brief 文本编码类型
    */
@@ -50,39 +66,22 @@ class Tts {
   };
 
   /**
-   * @enum ErrorCode
-   * @brief 错误码
-   */
-  enum ErrorCode : uint8_t {
-    kOk = 0,                                  /**< 0：成功 */
-    kI2cDataTooLongToFitInTransmitBuffer = 1, /**< 1：I2C数据太长，无法装入传输缓冲区 */
-    kI2cReceivedNackOnTransmitOfAddress = 2,  /**< 2：在I2C发送地址时收到NACK */
-    kI2cReceivedNackOnTransmitOfData = 3,     /**< 3：在I2C发送数据时收到NACK */
-    kI2cOtherError = 4,                       /**< 4：其他I2C错误 */
-    kI2cTimeout = 5,                          /**< 5：I2C通讯超时 */
-    kInvalidParameter = 6,                    /**< 6：参数错误 */
-  };
-
-  /**
    * @brief 构造函数
    * @param di2c_address 语音合成模块I2C地址，默认为0x40
    */
-  explicit Tts(const uint8_t i2c_address = kDefaultI2cAddress);
+  explicit Tts(TwoWire& wire = Wire, const uint8_t i2c_address = kDefaultI2cAddress);
 
   /**
    * @brief 初始化函数
-   * @param[in] wire Wire对象，用于I2C通讯，可选，默认使用Arduino标准的Wire对象进行I2C通讯
-   * @retval 0 成功
-   * @retval 非0 失败，详情请参考 @ref ErrorCode
+   * @return 返回值请参考 @ref ErrorCode
    */
-  ErrorCode Initialize(TwoWire* const wire = &Wire);
+  ErrorCode Initialize();
 
   /**
    * @brief 文本转语音并播放
    * @param[in] text 文本数据，数据长度不大于250个字节
    * @param[in] text_encoding_type 文本编码类型，参考 @ref TextEncodingType, 默认为 @ref kUtf8
-   * @retval 0 成功
-   * @retval 非0 失败，详情请参考 @ref ErrorCode
+   * @return 返回值请参考 @ref ErrorCode
    */
   ErrorCode Play(const String& text, const TextEncodingType text_encoding_type = kUtf8);
 
@@ -90,8 +89,7 @@ class Tts {
    * @brief 从缓存块0的文本开始转语音并播放
    * @param[in] text_encoding_type 文本编码类型，参考 @ref TextEncodingType，默认为 @ref kUtf8
    * @param[in] synthesizing_count 合成播放次数，范围 1 ~ 15
-   * @retval 0 成功
-   * @retval 非0 失败，详情请参考 @ref ErrorCode
+   * @return 返回值请参考 @ref ErrorCode
    */
   ErrorCode PlayFromCache(const TextEncodingType text_encoding_type = kUtf8, uint8_t count = kMinSpeechCount);
 
@@ -99,39 +97,36 @@ class Tts {
    * @brief 将文本内容上传到指定缓存块
    * @param[in] text 文本数据，数据长度不大于250个字节
    * @param[in] cache_index 缓存块索引，范围 0 ~ 15
-   * @retval 0 成功
-   * @retval 非0 失败，详情请参考 @ref ErrorCode
+   * @return 返回值请参考 @ref ErrorCode
    */
   ErrorCode PushTextToCache(const String& text, const uint8_t cache_index);
 
   /**
    * @brief 停止播放
-   * @retval 0 成功
-   * @retval 非0 失败，详情请参考 @ref ErrorCode
+   * @return 返回值请参考 @ref ErrorCode
    */
   ErrorCode Stop();
 
   /**
    * @brief 暂停播放
-   * @retval 0 成功
-   * @retval 非0 失败，详情请参考 @ref ErrorCode
+   * @return 返回值请参考 @ref ErrorCode
    */
   ErrorCode Pause();
 
   /**
    * @brief 恢复播放
-   * @retval 0 成功
-   * @retval 非0 失败，详情请参考 @ref ErrorCode
+   * @return 返回值请参考 @ref ErrorCode
    */
   ErrorCode Resume();
 
  private:
   Tts(const Tts&) = delete;
   Tts& operator=(const Tts&) = delete;
-
   ErrorCode I2cWrite(const uint8_t* data, const uint8_t length);
 
-  const uint8_t i2c_address_ = 0;
-  TwoWire* wire_ = nullptr;
+  TwoWire& wire_ = Wire;
+  const uint8_t i2c_address_ = kDefaultI2cAddress;
 };
 }  // namespace emakefun
+
+#endif

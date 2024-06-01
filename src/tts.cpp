@@ -14,17 +14,12 @@ inline T Min(const T x, const T y) {
 
 }  // namespace
 
-Tts::Tts(const uint8_t i2c_address) : i2c_address_(i2c_address) {
+Tts::Tts(TwoWire& wire, const uint8_t i2c_address) : wire_(wire), i2c_address_(i2c_address) {
 }
 
-Tts::ErrorCode Tts::Initialize(TwoWire* const wire) {
-  wire_ = wire;
-  if (wire_ == nullptr) {
-    return -10;
-  }
-
-  wire_->beginTransmission(i2c_address_);
-  return static_cast<Tts::ErrorCode>(wire_->endTransmission());
+Tts::ErrorCode Tts::Initialize() {
+  wire_.beginTransmission(i2c_address_);
+  return static_cast<Tts::ErrorCode>(wire_.endTransmission());
 }
 
 Tts::ErrorCode Tts::Play(const String& text, const TextEncodingType text_encoding_type) {
@@ -51,7 +46,7 @@ Tts::ErrorCode Tts::PlayFromCache(const TextEncodingType text_encoding_type, uin
 
 Tts::ErrorCode Tts::PushTextToCache(const String& text, const uint8_t cache_index) {
   if (cache_index > kMaxCacheIndex) {
-    return -10;
+    return kInvalidParameter;
   }
 
   const uint8_t text_length = Min<uint8_t>(kMaxTextBytesSize, text.length());
@@ -86,19 +81,20 @@ Tts::ErrorCode Tts::Resume() {
 
 Tts::ErrorCode Tts::I2cWrite(const uint8_t* data, const uint8_t length) {
 #ifdef AVR
-  TinyI2C.start(i2c_address_, 0);
+  if (!TinyI2C.start(i2c_address_, 0)) {
+    return kUnknownError;
+  }
   for (uint8_t i = 0; i < length; i++) {
-    TinyI2C.write(data[i]);
+    if (!TinyI2C.write(data[i])) {
+      return kUnknownError;
+    }
   }
   TinyI2C.stop();
-  return kOk;
+  return kOK;
 #else
-  if (wire_ == nullptr) {
-    return -10;
-  }
-  wire_->beginTransmission(i2c_address_);
-  wire_->write(data, length);
-  return static_cast<Tts::ErrorCode>(wire_->endTransmission());
+  wire_.beginTransmission(i2c_address_);
+  wire_.write(data, length);
+  return static_cast<Tts::ErrorCode>(wire_.endTransmission());
 #endif
 }
 
