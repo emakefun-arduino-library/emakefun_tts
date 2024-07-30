@@ -69,7 +69,10 @@ class Tts {
    * @brief 构造函数
    * @param di2c_address 语音合成模块I2C地址，默认为0x40
    */
-  explicit Tts(TwoWire& wire = Wire, const uint8_t i2c_address = kDefaultI2cAddress);
+  explicit Tts(const uint8_t i2c_address = kDefaultI2cAddress, TwoWire& wire = Wire);
+
+  explicit Tts(TwoWire& wire) : Tts(kDefaultI2cAddress, wire) {
+  }
 
   /**
    * @brief 初始化函数
@@ -124,8 +127,8 @@ class Tts {
   Tts& operator=(const Tts&) = delete;
   ErrorCode I2cWrite(const uint8_t* data, const uint8_t length);
 
-  TwoWire& wire_ = Wire;
   const uint8_t i2c_address_ = kDefaultI2cAddress;
+  TwoWire& wire_ = Wire;
 };
 }  // namespace emakefun
 

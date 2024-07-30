@@ -14,12 +14,11 @@ inline T Min(const T x, const T y) {
 
 }  // namespace
 
-Tts::Tts(TwoWire& wire, const uint8_t i2c_address) : wire_(wire), i2c_address_(i2c_address) {
+Tts::Tts(const uint8_t i2c_address, TwoWire& wire) : i2c_address_(i2c_address), wire_(wire) {
 }
 
 Tts::ErrorCode Tts::Initialize() {
-  wire_.beginTransmission(i2c_address_);
-  return static_cast<Tts::ErrorCode>(wire_.endTransmission());
+  return Stop();
 }
 
 Tts::ErrorCode Tts::Play(const String& text, const TextEncodingType text_encoding_type) {
